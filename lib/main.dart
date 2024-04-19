@@ -47,6 +47,10 @@ class _MyAppState extends State<MyApp> {
     });
   }*/
 
+  bool? mon = false;
+  bool? tue = false;
+  bool? wed = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -153,17 +157,14 @@ class _MyAppState extends State<MyApp> {
           onPressed: () {},
           child: Icon(Icons.add),
         ),
-      ],
-
-
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
-          BottomNavigationBarItem(label: 'Meet', icon: Icon(Icons.video_call))
-        ],
-      ),*/
+      ],*/
       ),
+
+      /*bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
+        BottomNavigationBarItem(label: 'Meet', icon: Icon(Icons.search))
+      ]
+      ),*/
 
       /*body: Center(
         child: ElevatedButton(
@@ -264,6 +265,48 @@ class _MyAppState extends State<MyApp> {
           ]),
         ],
       ),*/
+
+      /*body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            customCheckBox('Mon', mon),
+            customCheckBox('Tue', tue),
+            customCheckBox('Wed', wed),
+          ],
+        ),
+      ),*/
     );
+  }
+
+  Column customCheckBox(String s, bool? val) {
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(s),
+          Checkbox(
+              value: val,
+              onChanged: (bool? value) {
+                setState(() {
+                  switch (s) {
+                    case 'Mon':
+                      {
+                        mon = value;
+                        print(mon);
+                      }
+                    case 'Tue':
+                      {
+                        tue = value;
+                        print(tue);
+                      }
+                    case 'Wed':
+                      {
+                        wed = value;
+                        print(wed);
+                      }
+                  }
+                });
+              })
+        ]);
   }
 }
