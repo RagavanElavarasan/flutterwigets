@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  /*void showBottom() {
+  void showBottom() {
     showModalBottomSheet<void>(
         context: context,
         builder: (BuildContext context) {
@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
             ),
           );
         });
-  }*/
+  }
 
   /*String s = '';
   void _onChange(String v) {
@@ -57,6 +57,7 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         backgroundColor: Colors.black45,
         title: Text('My App Bar'),
+
         /*actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -166,15 +167,15 @@ class _MyAppState extends State<MyApp> {
       ]
       ),*/
 
-      /*body: Center(
+      body: Center(
         child: ElevatedButton(
+          onPressed: showBottom,
           child: Text(
             'Click Me',
             style: TextStyle(color: Colors.blueGrey),
           ),
-          onPressed: showBottom,
         ),
-      ),*/
+      ),
 
       /*body: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
