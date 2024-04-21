@@ -167,7 +167,7 @@ class _MyAppState extends State<MyApp> {
       ]
       ),*/
 
-      body: Center(
+      /*body: Center(
         child: ElevatedButton(
           onPressed: showBottom,
           child: Text(
@@ -267,7 +267,7 @@ class _MyAppState extends State<MyApp> {
         ],
       ),*/
 
-      /*body: Center(
+      body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
