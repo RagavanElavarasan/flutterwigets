@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
       home: MyApp(),
     ));
 
@@ -16,11 +16,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Alert'),
+        title: const Text('Custom Alert'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Click Me'),
+          child: const Text('Click Me'),
           onPressed: () {
             String title = 'Alert';
             String content = 'This is an alert dialog';
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
 
 showAlert(BuildContext context, String title, String content) {
   Widget ok = TextButton(
-    child: Text('OK'),
+    child: const Text('OK'),
     onPressed: () {},
   );
   AlertDialog alert = AlertDialog(

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
       home: MyApp(),
     ));
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -16,11 +18,11 @@ class _MyAppState extends State<MyApp> {
         builder: (context) => AlertDialog(
               title: Text(
                 m,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
               actions: <Widget>[
                 TextButton(
-                  child: Text('OK'),
+                  child: const Text('OK'),
                   onPressed: () => Navigator.pop(context),
                 )
               ],
@@ -31,12 +33,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Alert Dialouge'),
+        title: const Text('Alert Dialouge'),
         backgroundColor: Colors.brown,
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text(
+          child: const Text(
             'Click',
             style: TextStyle(color: Color.fromARGB(255, 55, 29, 29)),
           ),

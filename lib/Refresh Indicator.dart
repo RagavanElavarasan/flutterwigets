@@ -3,10 +3,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: const MyHomePage(),
       debugShowMaterialGrid: false,
     );
   }
@@ -31,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<int> data = [];
   Future loadList() async {
-    await Future.delayed(Duration(milliseconds: 3000));
+    await Future.delayed(const Duration(milliseconds: 3000));
     final random = Random();
     final data = List.generate(10, (index) => random.nextInt(100));
     setState(() {
@@ -49,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Refresh Indicator"),
+          title: const Text("Refresh Indicator"),
         ),
         body: Container(
             child: RefreshIndicator(
@@ -70,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Text(
                         data[index].toString(),
-                        style: TextStyle(fontSize: 35),
+                        style: const TextStyle(fontSize: 35),
                       ),
                     ],
                   ),

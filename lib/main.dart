@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MaterialApp(
-      home: new MyApp(),
+void main() => runApp(const MaterialApp(
+      home: MyApp(),
     ));
 
 class MyApp extends StatefulWidget {
@@ -17,13 +17,13 @@ class _MyAppState extends State<MyApp> {
         context: context,
         builder: (BuildContext context) {
           return Container(
-            padding: EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(15.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Security Alert.....! '),
+                const Text('Security Alert.....! '),
                 TextButton(
-                  child: Text('OK'),
+                  child: const Text('OK'),
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black45,
-        title: Text('My App Bar'),
+        title: const Text('My App Bar'),
 
         /*actions: <Widget>[
           IconButton(

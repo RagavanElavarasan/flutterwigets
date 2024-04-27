@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MaterialApp(
-      home: new MyApp(),
+void main() => runApp(const MaterialApp(
+      home: MyApp(),
     ));
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -12,17 +14,17 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int i = 0;
   final tabs = [
-    Center(child: Text('Home')),
-    Center(child: Text('Search')),
-    Center(child: Text('Profile')),
-    Center(child: Text('Camera')),
+    const Center(child: Text('Home')),
+    const Center(child: Text('Search')),
+    const Center(child: Text('Profile')),
+    const Center(child: Text('Camera')),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black45,
-        title: Text('Bottom Nav Bar'),
+        title: const Text('Bottom Nav Bar'),
       ),
       body: tabs[i],
       bottomNavigationBar: BottomNavigationBar(
@@ -49,9 +51,9 @@ class _MyAppState extends State<MyApp> {
             backgroundColor: Colors.red,
           ),
         ],
-        onTap: (current_index) {
+        onTap: (currentIndex) {
           setState(() {
-            i = current_index;
+            i = currentIndex;
           });
         },
       ),

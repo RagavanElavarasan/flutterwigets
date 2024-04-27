@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
       home: MyApp(),
     ));
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -38,18 +40,18 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Animated Container'),
+        title: const Text('Animated Container'),
       ),
       body: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         height: 800,
         width: 500,
         color: Colors.black,
         child: Column(
           children: <Widget>[
             AnimatedContainer(
-              duration: Duration(seconds: 1),
+              duration: const Duration(seconds: 1),
               curve: Curves.easeIn,
               height: _h,
               width: _w,
@@ -66,7 +68,7 @@ class _MyAppState extends State<MyApp> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.lightBlue,
               ),
-              child: Text(
+              child: const Text(
                 'Click Me',
                 style: TextStyle(color: Colors.black),
               ),
@@ -78,7 +80,7 @@ class _MyAppState extends State<MyApp> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
               ),
-              child: Text(
+              child: const Text(
                 'Change Border',
                 style: TextStyle(color: Colors.white),
               ),
@@ -90,7 +92,7 @@ class _MyAppState extends State<MyApp> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
               ),
-              child: Text(
+              child: const Text(
                 'Click Me',
                 style: TextStyle(color: Colors.black),
               ),

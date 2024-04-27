@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MaterialApp(
-      home: new MyApp(),
+void main() => runApp(const MaterialApp(
+      home: MyApp(),
     ));
 
 class MyApp extends StatefulWidget {
@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black45,
-        title: Text('Custom checkbox'),
+        title: const Text('Custom checkbox'),
       ),
       body: Center(
         child: Row(

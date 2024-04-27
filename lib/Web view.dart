@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyApp(),
-    ));
+void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   late WebViewController _controller;
-
-  goBack() async {
+  void goback() async {
     await _controller.goBack();
     await _controller.canGoBack();
   }
 
-  goForward() async {
+  void goforward() async {
     await _controller.goForward();
     await _controller.canGoForward();
   }
@@ -28,21 +31,21 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF04aa6d),
-        title: Text('Web View'),
+        title: const Text('flutter web viewer'),
+        backgroundColor: const Color(0xFF04aa6d),
         actions: [
-          IconButton(onPressed: goBack, icon: Icon(Icons.arrow_back)),
-          IconButton(onPressed: goForward, icon: Icon(Icons.arrow_forward)),
+          IconButton(onPressed: () => goback, icon: const Icon(Icons.arrow_back)),
+          IconButton(
+              onPressed: () => goforward, icon: const Icon(Icons.arrow_forward)),
         ],
       ),
       body: SafeArea(
           child: WebView(
-        initialUrl: 'https://www.w3schools.com/',
-        javascriptMode: JavascriptMode.unrestricted,
-        onWebViewCreated: (WebViewController webViewController) {
-          _controller = webViewController;
-        },
-      )),
+              initialUrl: 'https://www.w3schools.com/',
+              javascriptMode: JavascriptMode.unrestricted,
+              onWebViewCreated: (WebViewController webViewcontroller) {
+                _controller = webViewcontroller;
+              })),
     );
   }
 }

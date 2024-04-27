@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
       home: MyApp(),
     ));
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Button'),
+        title: const Text('Custom Button'),
       ),
       body: Container(
         child: Row(
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               width: 60,
               height: 60,
               color: Colors.deepOrange,
-              icon: Icon(
+              icon: const Icon(
                 Icons.menu,
                 color: Colors.white,
               ),
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
               width: 60,
               height: 60,
               color: Colors.green,
-              icon: Icon(
+              icon: const Icon(
                 Icons.add,
                 color: Colors.white,
               ),
